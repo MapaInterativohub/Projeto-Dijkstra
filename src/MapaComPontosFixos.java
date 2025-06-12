@@ -19,33 +19,35 @@ public class MapaComPontosFixos extends JPanel {
 
         // Adiciona os pontos (cidades) manualmente à lista 'vertices'
         // Cada PontoMapa tem coordenadas X, Y e um nome (Cidade (SIGLA DO ESTADO))
-        vertices.add(new PontoMapa(137, 199, "Rio Branco (AC)"));
-        vertices.add(new PontoMapa(321, 39, "Boa Vista (RR)"));
-        vertices.add(new PontoMapa(308, 143, "Manaus (AM)"));
-        vertices.add(new PontoMapa(297, 228, "Porto Velho (RO)"));
-        vertices.add(new PontoMapa(490, 43, "Macapá (AP)"));
-        vertices.add(new PontoMapa(463, 160, "Belém (PA)"));
-        vertices.add(new PontoMapa(599, 156, "São Luís (MA)"));
-        vertices.add(new PontoMapa(696, 157, "Fortaleza (CE)"));/////
-        vertices.add(new PontoMapa(650, 192, "Teresina (PI)"));
-        vertices.add(new PontoMapa(734, 158, "Natal (RN)"));
-        vertices.add(new PontoMapa(723, 182, "João Pessoa (PB)"));
-        vertices.add(new PontoMapa(704, 199, "Recife (PE)"));
-        vertices.add(new PontoMapa(752, 223, "Maceió (AL)"));
-        vertices.add(new PontoMapa(733, 232, "Aracaju (SE)"));
-        vertices.add(new PontoMapa(670, 250, "Salvador (BA)"));
-        vertices.add(new PontoMapa(543, 244, "Palmas (TO)"));
-        vertices.add(new PontoMapa(439, 265, "Cuiabá (MT)"));
-        vertices.add(new PontoMapa(508, 324, "Goiânia (GO)"));
-        vertices.add(new PontoMapa(547, 297, "Brasília (DF)"));
-        vertices.add(new PontoMapa(459, 359, "Campo Grande (MS)"));
-        vertices.add(new PontoMapa(605, 329, "Belo Horizonte (MG)"));
-        vertices.add(new PontoMapa(671, 367, "Vitória (ES)"));
-        vertices.add(new PontoMapa(639, 401, "Rio de Janeiro (RJ)"));
-        vertices.add(new PontoMapa(544, 405, "São Paulo (SP)"));
-        vertices.add(new PontoMapa(486, 419, "Curitiba (PR)"));
-        vertices.add(new PontoMapa(524, 469, "Florianópolis (SC)"));
-        vertices.add(new PontoMapa(479, 490, "Porto Alegre (RS)"));
+        // vertices.add(new PontoMapa(137, 199, "Rio Branco (AC)"));
+        // vertices.add(new PontoMapa(321, 39, "Boa Vista (RR)"));
+        // vertices.add(new PontoMapa(308, 143, "Manaus (AM)"));
+        // vertices.add(new PontoMapa(297, 228, "Porto Velho (RO)"));
+        // vertices.add(new PontoMapa(490, 43, "Macapá (AP)"));
+        // vertices.add(new PontoMapa(463, 160, "Belém (PA)"));
+        // vertices.add(new PontoMapa(599, 156, "São Luís (MA)"));
+        // vertices.add(new PontoMapa(696, 157, "Fortaleza (CE)"));/////
+        // vertices.add(new PontoMapa(650, 192, "Teresina (PI)"));
+        // vertices.add(new PontoMapa(734, 158, "Natal (RN)"));
+        // vertices.add(new PontoMapa(723, 182, "João Pessoa (PB)"));
+        // vertices.add(new PontoMapa(704, 199, "Recife (PE)"));
+        // vertices.add(new PontoMapa(752, 223, "Maceió (AL)"));
+        // vertices.add(new PontoMapa(733, 232, "Aracaju (SE)"));
+        // vertices.add(new PontoMapa(670, 250, "Salvador (BA)"));
+        // vertices.add(new PontoMapa(543, 244, "Palmas (TO)"));
+        // vertices.add(new PontoMapa(439, 265, "Cuiabá (MT)"));
+        // vertices.add(new PontoMapa(508, 324, "Goiânia (GO)"));
+        // vertices.add(new PontoMapa(547, 297, "Brasília (DF)"));
+        // vertices.add(new PontoMapa(459, 359, "Campo Grande (MS)"));
+        // vertices.add(new PontoMapa(605, 329, "Belo Horizonte (MG)"));
+        // vertices.add(new PontoMapa(671, 367, "Vitória (ES)"));
+        // vertices.add(new PontoMapa(639, 401, "Rio de Janeiro (RJ)"));
+        // vertices.add(new PontoMapa(544, 405, "São Paulo (SP)"));
+        // vertices.add(new PontoMapa(486, 419, "Curitiba (PR)"));
+        // vertices.add(new PontoMapa(524, 469, "Florianópolis (SC)"));
+        // vertices.add(new PontoMapa(479, 490, "Porto Alegre (RS)"));
+        CapitaisMapaService service = new CapitaisMapaService();
+        vertices.addAll(service.getLista());
     }
 
     // --- Seção para inicialização e configuração dos componentes da interface ---
@@ -54,6 +56,7 @@ public class MapaComPontosFixos extends JPanel {
     private static void initComponents(JPanel painel, MapaComPontosFixos painelLateralMapa) {
         // Cria uma instância do Grafo.
         // O Grafo é onde os vértices (cidades) e arestas (conexões com distâncias) são armazenados.
+        // CapitaisMapaService.criarListaCapitaisGrafo()
         Grafo grafo = new Grafo(); 
 
         // Adiciona todos os vértices (cidades com siglas) ao grafo.

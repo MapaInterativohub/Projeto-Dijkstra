@@ -11,6 +11,7 @@ public class Grafo {
         // Só adiciona a cidade se ela ainda não estiver presente no grafo.
         adjacencias.putIfAbsent(nome, new ArrayList<>());
     }
+    
 
     // Método para adicionar uma aresta entre duas cidades, com uma distância (peso).
     public void adicionarAresta(String origem, String destino, int distancia) {
