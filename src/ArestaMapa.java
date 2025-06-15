@@ -1,8 +1,3 @@
-import java.awt.*; // Embora esta classe não desenhe diretamente, 'java.awt' é frequentemente importado
-                    // em projetos gráficos Swing/AWT, mas não é estritamente necessário aqui.
-import java.util.ArrayList; // Esta importação também não é usada diretamente nesta classe,
-                             // mas pode ter sido incluída por conveniência ou para uso futuro em outras partes do projeto.
-
 public class ArestaMapa {
     // --- Variáveis de Membro ---
     // Essas variáveis privadas armazenam os nomes dos dois pontos que a aresta conecta.

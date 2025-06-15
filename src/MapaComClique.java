@@ -1,8 +1,6 @@
-package Grafo;
+
 
 import javax.swing.*;
-
-import PontoMapa;
 
 import java.awt.*;
 import java.awt.event.*;

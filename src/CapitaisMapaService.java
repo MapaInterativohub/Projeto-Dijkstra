@@ -3,13 +3,10 @@ import java.util.List;
 
 public class CapitaisMapaService {
     List<PontoMapa> lista;
-    // List<Grafo> listaGrafo;
 
     public CapitaisMapaService() {
         this.lista = new ArrayList<PontoMapa>();
-        // this.listaGrafo = new ArrayList<Grafo>();
         this.criarListaCapitaisMapa();
-        this.criarListaCapitaisGrafo();
     }
 
     private void criarListaCapitaisMapa() {
@@ -42,8 +39,7 @@ public class CapitaisMapaService {
         this.lista.add(new PontoMapa(479, 490, "Porto Alegre (RS)"));
     }
 
-    public void criarListaCapitaisGrafo(){
-        Grafo grafo = new Grafo(); 
+    public static void criarListaCapitaisVerticesGrafo(Grafo grafo) {
         // Adiciona todos os vértices (cidades com siglas) ao grafo.
         // Estes são os mesmos nomes usados na lista 'vertices' do MapaComPontosFixos.
         grafo.adicionarVertice("Aracajú (SE)");
@@ -73,9 +69,11 @@ public class CapitaisMapaService {
         grafo.adicionarVertice("São Paulo (SP)");
         grafo.adicionarVertice("Teresina (PI)");
         grafo.adicionarVertice("Vitória (ES)");
-
+    }
+    public static void criarListaCapitaisArestaGrafo(Grafo grafo){
         // Adiciona as arestas (conexões entre cidades e suas distâncias) ao grafo.
-        // Estas representam as rotas diretas entre as cidades vizinhas e suas distâncias.
+        // Estas representam as rotas diretas entre as cidades vizinhas e suas
+        // distâncias.
         grafo.adicionarAresta("Rio Branco (AC)", "Porto Velho (RO)", 544);
         grafo.adicionarAresta("Macapá (AP)", "Belém (PA)", 306);
         grafo.adicionarAresta("Manaus (AM)", "Rio Branco (AC)", 1445);
